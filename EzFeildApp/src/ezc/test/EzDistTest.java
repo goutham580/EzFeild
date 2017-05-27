@@ -77,8 +77,8 @@ public class EzDistTest extends HttpServlet {
     	for (Object[] result : result5) {
     		 EzUser ezUser = (EzUser)result[0];
     		 EzUserBeat ezUserBeat = (EzUserBeat)result[1];
-    		 response.getWriter().println("ezUser:::"+ezUser);
-    		 response.getWriter().println("ezUserBeat:::"+ezUserBeat);
+    		 response.getWriter().println("ezUser:::"+ezUser.getUserId());
+    		 response.getWriter().println("ezUserBeat:::"+ezUserBeat.getEzUserBeatKey().getUserId());
     	}
     	
     	response.getWriter().println("<p>Persistence with JPA Sample!</p>");
