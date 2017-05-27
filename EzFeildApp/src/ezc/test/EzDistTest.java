@@ -126,7 +126,7 @@ public class EzDistTest extends HttpServlet {
         try {
             if (firstName != null && lastName != null && !firstName.trim().isEmpty() && !lastName.trim().isEmpty()) {
                 EzUser EzUser = new EzUser();
-                //EzUser.setEzUserId(124);
+                //EzUser.setEzUserId(124); 
                 EzUser.setUserId("11111");
                 EzUser.setFirstName(firstName);
                 
@@ -167,7 +167,7 @@ public class EzDistTest extends HttpServlet {
             em = emf.createEntityManager();
             EzBeatDistrubutorKey ezBeatDistrubutorKey = new EzBeatDistrubutorKey();
             ezBeatDistrubutorKey.setDistrubutorId(33333);
-            ezBeatDistrubutorKey.setBeatId("22222");
+            ezBeatDistrubutorKey.setBeatId(22222);
             EzBeatDistrubutor ezBeatDistrubutor = new EzBeatDistrubutor();
             ezBeatDistrubutor.setEzBeatDistrubutorKey(ezBeatDistrubutorKey);
             em.getTransaction().begin();

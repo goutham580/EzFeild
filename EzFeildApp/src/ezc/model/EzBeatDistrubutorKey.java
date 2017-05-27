@@ -18,17 +18,17 @@ public class EzBeatDistrubutorKey implements Serializable {
 		super();
 	}
 	@Column(name = "EBD_BEAT_ID", length = 10)
-	private String beatId;
+	private int beatId;
 
 	@Column(name = "EBD_DISTRUBUTOR_ID", length = 10)
 	private int distrubutorId;
 	
 	
-	public String getBeatId() {
+	public int getBeatId() {
 		return beatId;
 	}
 
-	public void setBeatId(String beatId) {
+	public void setBeatId(int beatId) {
 		this.beatId = beatId;
 	}
 
@@ -42,14 +42,13 @@ public class EzBeatDistrubutorKey implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return beatId.hashCode() + distrubutorId;
+		return beatId + distrubutorId;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		return ((obj instanceof EzBeatDistrubutorKey)
-				&& this.beatId.equals(((EzBeatDistrubutorKey) obj)
-						.getBeatId()) && (this.distrubutorId == ((EzBeatDistrubutorKey) obj)
+				&& (this.distrubutorId == ((EzBeatDistrubutorKey) obj)
 					.getDistrubutorId()));
 	}
 }
