@@ -8,7 +8,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name = "EZC_BEAT_DISTRUBUTOR")
 public class EzBeatDistrubutor implements Serializable {
 
 	@EmbeddedId
@@ -27,29 +27,31 @@ public class EzBeatDistrubutor implements Serializable {
 		this.ezBeatDistrubutorKey = ezBeatDistrubutorKey;
 	}
 
-	public EzBeat getEzBeat() {
-		return ezBeat;
-	}
-
-	public void setEzBeat(EzBeat ezBeat) {
-		this.ezBeat = ezBeat;
-	}
-
-	public EzDistrubutor getEzDistrubutor() {
-		return ezDistrubutor;
-	}
-
-	public void setEzDistrubutor(EzDistrubutor ezDistrubutor) {
-		this.ezDistrubutor = ezDistrubutor;
-	}
 
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "EBD_BEAT_ID", referencedColumnName = "EB_BEAT_ID", insertable = false, updatable = false)
-	private EzBeat ezBeat;
+	private EzBeat ezBeatBD;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "EBD_DISTRUBUTOR_ID", referencedColumnName = "ED_DISTRUBUTOR_ID", insertable = false, updatable = false)
-	private EzDistrubutor ezDistrubutor;
+	private EzDistrubutor ezDistrubutorBD;
+
+	public EzBeat getEzBeatBD() {
+		return ezBeatBD;
+	}
+
+	public void setEzBeatBD(EzBeat ezBeatBD) {
+		this.ezBeatBD = ezBeatBD;
+	}
+
+	public EzDistrubutor getEzDistrubutorBD() {
+		return ezDistrubutorBD;
+	}
+
+	public void setEzDistrubutorBD(EzDistrubutor ezDistrubutorBD) {
+		this.ezDistrubutorBD = ezDistrubutorBD;
+	}
+
 	
 	
 }

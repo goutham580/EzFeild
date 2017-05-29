@@ -39,10 +39,10 @@ public class EzBeat {
 		this.lastName = lastName;
 	}
 
-	@OneToMany(mappedBy = "ezBeat", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "ezBeatUB", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<EzUserBeat> ezUserBeat;
 	
-	@OneToMany(mappedBy = "ezBeat", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "ezBeatBD", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<EzBeatDistrubutor> ezBeatDistrubutor;
 
 	public int getBeatId() {

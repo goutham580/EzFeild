@@ -18,7 +18,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "EZC_USERS")
+@Table(name = "EZC_USER")
 public class EzUser {
 
 	@Id
@@ -28,7 +28,7 @@ public class EzUser {
 	@Column(name = "EU_FIRST_NAME", length = 40)
 	private String firstName;
 
-	@OneToMany(mappedBy = "ezUser", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "ezUserUB", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<EzUserBeat> ezUserBeat;
 
 	public String getUserId() {

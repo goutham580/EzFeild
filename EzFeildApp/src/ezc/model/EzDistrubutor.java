@@ -10,7 +10,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name = "EZC_DISTRUBUTOR")
 public class EzDistrubutor implements Serializable {
 
 	@Id
@@ -20,8 +20,11 @@ public class EzDistrubutor implements Serializable {
 	@Column(name = "ED_DISTRUBUTOR_NAME", length = 40)
 	private String distName;
 	
-	@OneToMany(mappedBy = "ezDistrubutor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "ezDistrubutorBD", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<EzBeatDistrubutor> ezBeatDistrubutor;
+	
+	@OneToMany(mappedBy = "ezRetailerDR", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<EzDistrubutorRetailer> ezDistrubutorRetailer;
 	
 	private static final long serialVersionUID = 1L;
 

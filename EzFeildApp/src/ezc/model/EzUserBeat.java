@@ -8,7 +8,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name = "EZC_USER_BEAT")
 public class EzUserBeat implements Serializable {
 
 	@EmbeddedId
@@ -24,32 +24,32 @@ public class EzUserBeat implements Serializable {
 		this.ezUserBeatKey = ezUserBeatKey;
 	}
 
-	public EzUser getEzUser() {
-		return ezUser;
-	}
-
-	public void setEzUser(EzUser ezUser) {
-		this.ezUser = ezUser;
-	}
-
-	public EzBeat getEzBeat() {
-		return ezBeat;
-	}
-
-	public void setEzBeat(EzBeat ezBeat) {
-		this.ezBeat = ezBeat;
-	}
-
 	public EzUserBeat() {
 		super();
 	}
    
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "EUB_USER_ID", referencedColumnName = "EU_USER_ID", insertable = false, updatable = false)
-	private EzUser ezUser;
+	private EzUser ezUserUB;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "EUB_BEAT_ID", referencedColumnName = "EB_BEAT_ID", insertable = false, updatable = false)
-	private EzBeat ezBeat;
+	private EzBeat ezBeatUB;
+
+	public EzUser getEzUserUB() {
+		return ezUserUB;
+	}
+
+	public void setEzUserUB(EzUser ezUserUB) {
+		this.ezUserUB = ezUserUB;
+	}
+
+	public EzBeat getEzBeatUB() {
+		return ezBeatUB;
+	}
+
+	public void setEzBeatUB(EzBeat ezBeatUB) {
+		this.ezBeatUB = ezBeatUB;
+	}
 	
 }
